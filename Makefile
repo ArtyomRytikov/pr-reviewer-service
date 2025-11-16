@@ -18,10 +18,11 @@ clean:
 	go clean
 
 load-test:
-	@echo "Запуск нагрузочного тестирования..."
+	@echo "Running load test..."
 	load-test.bat
+
 stats:
-	@echo "Получение статистики..."
+	@echo "Getting statistics..."
 	@curl -s http://localhost:8080/stats
 
 help:
