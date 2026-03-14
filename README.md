@@ -53,7 +53,7 @@ pr-reviewer-service/
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone <URL_РЕПОЗИТОРИЯ>
+git clone <https://github.com/ArtyomRytikov/pr-reviewer-service.git>
 cd pr-reviewer-service
 ```
 
@@ -65,7 +65,7 @@ docker compose up --build
 
 Сервис будет доступен по адресу: `http://localhost:8080`.
 
-Проверка здоровья:
+Проверка состояния:
 
 ```bash
 curl http://localhost:8080/health
