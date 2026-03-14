@@ -23,17 +23,29 @@
 ## Структура проекта
 
 ```text
-.
-├── cmd/server/main.go                # Точка входа, HTTP-роутинг и запуск сервера
-├── internal/models/models.go         # Модели домена и DTO ответов
-├── internal/service/service.go       # Бизнес-логика назначения/переназначения
-├── internal/storage/postgres.go      # Работа с PostgreSQL
-├── internal/handlers/                # Выделенные хендлеры (частично)
-├── migrations/001_init.sql           # Инициализация схемы БД
-├── docker-compose.yml                # Локальный запуск приложения + PostgreSQL
-├── Dockerfile                        # Сборка контейнера приложения
-├── Makefile                          # Команды для разработки
-└── load-test.bat                     # Скрипт нагрузочного теста (Windows)
+pr-reviewer-service/
+├── cmd/
+│   └── server/
+│       └── main.go                   # Точка входа, инициализация зависимостей и HTTP-роуты
+├── internal/
+│   ├── handlers/
+│   │   ├── common.go                 # Общие функции для HTTP-ответов и ошибок
+│   │   └── teams.go                  # Хендлеры для работы с командами
+│   ├── models/
+│   │   └── models.go                 # Доменные модели и структуры API-ответов
+│   ├── service/
+│   │   └── service.go                # Бизнес-логика назначения и переназначения ревьюеров
+│   └── storage/
+│       └── postgres.go               # SQL-запросы и работа с PostgreSQL
+├── migrations/
+│   └── 001_init.sql                  # Начальная миграция: таблицы teams/users/pull_requests
+├── результаты тестирования/          # Скриншоты результатов нагрузочного теста
+├── Dockerfile                        # Docker-образ приложения
+├── docker-compose.yml                # Локальный запуск приложения вместе с PostgreSQL
+├── Makefile                          # Команды сборки, запуска и вспомогательные цели
+├── go.mod                            # Go-модуль и версия языка
+├── go.sum                            # Контрольные суммы зависимостей
+└── load-test.bat                     # Нагрузочный тест (Windows)
 ```
 
 ## Как запустить после клонирования репозитория
