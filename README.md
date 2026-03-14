@@ -53,7 +53,7 @@ pr-reviewer-service/
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone <https://github.com/ArtyomRytikov/pr-reviewer-service.git>
+git clone https://github.com/ArtyomRytikov/pr-reviewer-service.git
 cd pr-reviewer-service
 ```
 
